@@ -1,0 +1,18 @@
+export type SnippetType = "MARKDOWN" | "PROMPT";
+
+export interface SnippetResponse {
+    id: string;
+    title: string;
+    description: string | null;
+    type: SnippetType;
+    tags: string[];
+    language: string | null;
+    categoryId: string | null;
+    isFavorite: boolean;
+    isPinned: boolean;
+    viewCount: number;
+    copyCount: number;
+    createdAt: string;
+    updatedAt: string;
+    excerpt: string;
+}

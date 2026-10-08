@@ -12,6 +12,7 @@ const categorySelect = {
   icon: true,
   createdAt: true,
   updatedAt: true,
+  _count: { select: { snippets: true } },
 } as const;
 
 export const categoryService = {
