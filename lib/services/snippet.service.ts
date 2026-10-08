@@ -21,6 +21,7 @@ const listSelect = {
   createdAt: true,
   updatedAt: true,
   content: true,
+  category: { select: { name: true } },
 } as const;
 
 export const snippetService = {
@@ -62,9 +63,12 @@ export const snippetService = {
     ]);
 
     return {
-      items: items.map(({ content, ...rest }) => ({
+      items: items.map(({ content, category, ...rest }) => ({
         ...rest,
+        categoryName: category?.name ?? null,
         excerpt: content.slice(0, 200),
+        size: Buffer.byteLength(content, "utf8"),
+        lines: content.split("\n").length,
       })),
       total,
     };

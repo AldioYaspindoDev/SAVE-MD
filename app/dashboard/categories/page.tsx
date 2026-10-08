@@ -78,7 +78,7 @@ export default function CategoriesPage() {
       <main className="flex-1 h-full overflow-y-auto p-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-zinc-200 pb-5">
           <div>
-            <h1 className="text-2xl font-bold text-zinc-900 tracking-tight">Kategori</h1>
+            <h1 className="text-3xl font-bold text-zinc-900 tracking-tight">Kategori</h1>
             <p className="text-sm text-zinc-500 mt-1">
               Kelola dan organisasi seluruh resource Anda berdasarkan kategori.
             </p>
