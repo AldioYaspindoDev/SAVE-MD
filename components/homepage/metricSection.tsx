@@ -21,34 +21,34 @@ interface MetricsSectionProps {
 
 const DEFAULT_METRICS: MetricItem[] = [
   {
-    value: "25,000+",
-    label: "SNIPPET & PROMPT TERINDEKS",
-    description: "Diaudit bebas syntax error",
+    value: "3",
+    label: "JENIS ASET DIDUKUNG",
+    description: "Kode, prompt, dan Markdown",
   },
   {
-    value: "< 5ms",
-    label: "LATENSI EKSEKUSI ⌘K",
-    description: "Client-side instant index",
+    value: "⌘K",
+    label: "AKSES PENCARIAN",
+    description: "Satu shortcut dari mana saja",
   },
   {
-    value: "100%",
-    label: "FORMAT MARKDOWN TERBUKA",
-    description: "Nol risiko vendor lock-in",
+    value: ".md",
+    label: "FORMAT PENYIMPANAN",
+    description: "File terbuka, bisa dibaca manusia",
   },
   {
-    value: "0.12s",
-    label: "AKSES KE CLIPBOARD",
-    description: "Rata-rata waktu aksi developer",
+    value: "1×",
+    label: "TULIS, PAKAI BERKALI-KALI",
+    description: "Tanpa perlu menulis ulang",
   },
 ];
 
 const DEFAULT_VALUE_ITEMS: TelemetryMetricsData[] = [
   {
-    subtitle: "METRIK EFISIENSI GLOBAL",
-    title: "Diverifikasi Melalui Telemetri Nyata",
-    samplingRate: "SAMPLING: 1.4M REQ/HARI",
-    dataSource: "SUMBER DATA: AUDIT PRODUKSI Q1 2025",
-    integrations: ["OPENAI", "ANTHROPIC", "CURSOR", "OLLAMA"],
+    subtitle: "PRINSIP PRODUK",
+    title: "Dibangun untuk Penggunaan Pribadi",
+    samplingRate: "PENYIMPANAN LOKAL",
+    dataSource: "DATA MILIK ANDA SEPENUHNYA",
+    integrations: [],
     metrics: DEFAULT_METRICS,
   },
 ];

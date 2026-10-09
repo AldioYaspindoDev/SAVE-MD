@@ -5,7 +5,7 @@ const sliderItems = [
     { name: "[PROMPT CODING]", icon: Terminal },
     { name: "[RULES & CLAUDE.MD]", icon: FileText },
     { name: "[UI SNIPPET]", icon: Code2 },
-    { name: "[DESIGN TOKENS]", icon: Paintbrush },
+    { name: "[SKILLS]", icon: Paintbrush },
     { name: "[SYSTEM ARCHITECTURE]", icon: Layers },
     { name: "[AGENT WORKFLOWS]", icon: Settings2 },
 ];

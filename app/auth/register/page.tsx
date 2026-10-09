@@ -107,14 +107,14 @@ export default function WorkspaceOnboarding() {
               </div>
 
               {/* Tombol Akses Cepat */}
-              <div className="space-y-2.5">
+              {/* <div className="space-y-2.5">
                 <button
                   type="button"
                   className="w-full h-10 px-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-xs flex items-center justify-between transition-colors text-xs font-medium text-slate-800"
                 >
-                  <div className="flex items-center gap-2.5">
+                  <div className="flex items-center gap-2.5"> */}
                     {/* <Github className="w-4 h-4 text-slate-900" /> */}
-                    <span>Masuk dengan Akun GitHub</span>
+                    {/* <span>Masuk dengan Akun GitHub</span>
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                 </button>
@@ -134,15 +134,15 @@ export default function WorkspaceOnboarding() {
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                 </button>
-              </div>
+              </div> */}
 
               {/* Pembatas */}
-              <div className="relative flex items-center justify-center my-3">
+              {/* <div className="relative flex items-center justify-center my-3">
                 <div className="w-full border-t border-slate-200" />
                 <span className="absolute px-3 bg-white text-[11px] font-mono text-slate-400 uppercase">
                   Atau Buat Akun Manual
                 </span>
-              </div>
+              </div> */}
 
               {/* Form Manual */}
               <form onSubmit={handleSubmit} className="space-y-3.5">

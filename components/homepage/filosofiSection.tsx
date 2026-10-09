@@ -1,7 +1,7 @@
 const results = [
-  { title: "Prompt: Generator Zod Schema dari SQL DDL", sub: "Prompt Coding / PostgreSQL", key: "⌘1" },
-  { title: "Tailwind v4 Clean Bento Grid Template", sub: "UI Snippet / CSS Architecture", key: "⌘2" },
-  { title: "Workflow: Multi-agent PR Review Protocol", sub: "Agent Workflows / CI Automation", key: "⌘3" },
+  { title: "Prompt: Generator Zod Schema dari SQL DDL", sub: "Prompt / PostgreSQL", key: "⌘1" },
+  { title: "Tailwind v4 Clean Bento Grid Template", sub: "Snippet Kode / CSS Architecture", key: "⌘2" },
+  { title: "Aturan Review PR Multi-Agent", sub: "Markdown / CI Automation", key: "⌘3" },
 ];
 
 function FeatureNumber({ no }: { no: string }) {
@@ -25,13 +25,10 @@ export default function FilosofiSection() {
     <section className="w-full border-b border-zinc-200 mb-10">
       <div className="mx-auto flex w-full max-w-7xl flex-col items-start justify-start gap-12 px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex w-full max-w-3xl flex-col items-start gap-2.5">
-          <p className="text-xs font-medium font-mono uppercase leading-3 tracking-wide text-zinc-400">
-            01 / Filosofi Eksekusi
-          </p>
           <h2 className="text-4xl font-medium leading-snug text-neutral-900 md:text-5xl">
-            Didesain untuk kecepatan penulisan kode,
+            Tulis sekali, gunakan berkali-kali.
             <br />
-            <span className="text-zinc-400">bukan sekadar penimbunan file yang terlupakan.</span>
+            <span className="text-zinc-400">Tempat penyimpanan pribadi untuk kode, prompt, dan markdown anda.</span>
           </h2>
         </div>
 
@@ -41,10 +38,9 @@ export default function FilosofiSection() {
               <div className="flex flex-col items-start gap-4 sm:flex-row">
                 <FeatureNumber no="01" />
                 <div>
-                  <h3 className="text-lg font-medium leading-6 text-neutral-900">Pencarian Sub-Milidetik</h3>
+                  <h3 className="text-lg font-medium leading-6 text-neutral-900">Simpan</h3>
                   <p className="mt-1 max-w-md text-base leading-6 text-zinc-500">
-                    Mesin pencari berbasis WASM client-side yang memindai puluhan ribu token prompt tanpa lag
-                    keyboard dan tanpa bergantung pada round-trip server.
+                    Kode, prompt, dan catatan Markdown tersimpan rapi dalam satu tempat.
                   </p>
                 </div>
               </div>
@@ -53,11 +49,10 @@ export default function FilosofiSection() {
                 <FeatureNumber no="02" />
                 <div>
                   <h3 className="flex flex-wrap items-center gap-2 text-lg font-medium leading-6 text-neutral-900">
-                    Variabel Dinamis <CodeChip>{"{{nama}}"}</CodeChip>
+                    Cari <CodeChip>{"{{nama}}"}</CodeChip>
                   </h3>
                   <p className="mt-1 max-w-md text-base leading-6 text-zinc-500">
-                    Sematkan parameter kontekstual ke dalam prompt dan template. Vault secara otomatis meminta
-                    value isian sebelum menyalin langsung ke clipboard sistem.
+                    Ketik apa yang Anda ingat, temukan kembali dalam sekejap.
                   </p>
                 </div>
               </div>
@@ -66,19 +61,13 @@ export default function FilosofiSection() {
                 <FeatureNumber no="03" />
                 <div>
                   <h3 className="text-lg font-medium leading-6 text-neutral-900">
-                    Ekspor Sekali Klik untuk Claude &amp; Cursor
+                    Salin
                   </h3>
                   <p className="mt-1 max-w-md text-base leading-6 text-zinc-500">
-                    Sinkronkan bundel aturan arsitektur ke file <CodeChip>.cursorrules</CodeChip> atau{" "}
-                    <CodeChip>CLAUDE.md</CodeChip> di root direktori project hanya dengan satu shortcut keyboard.
+                    Satu shortcut, langsung ke clipboard.
                   </p>
                 </div>
               </div>
-            </div>
-
-            <div className="flex flex-wrap items-center justify-between gap-4 border-t border-zinc-200 pt-6">
-              <span className="text-xs font-mono font-medium tracking-wide text-zinc-400">INDEX TIME: 0.44MS</span>
-              <span className="text-xs font-mono font-medium tracking-wide text-green-800">LOCAL CACHE READY</span>
             </div>
           </div>
 
@@ -100,7 +89,7 @@ export default function FilosofiSection() {
                         Next.js 15 Server Action Security Rule
                       </p>
                       <p className="mt-1 text-xs font-mono font-medium leading-3 tracking-wide text-blue-800">
-                        CLAUDE.md / Authentication / Zero-Trust
+                        Markdown / Authentication / Zero-Trust
                       </p>
                     </div>
                   </div>

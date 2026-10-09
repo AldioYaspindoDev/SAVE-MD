@@ -28,3 +28,8 @@ export async function UpdateSnippets(id: string, payload: UpdateSnippetInput) {
     const { data } = await api.patch(`/api/snippets/${id}`, payload);
     return data;
 }
+
+export async function DeleteSnippet(id: string) {
+    const { data } = await api.delete(`/api/snippets/${id}`);
+    return data;
+}

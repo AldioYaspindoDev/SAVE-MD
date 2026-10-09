@@ -2,7 +2,7 @@
 
 import { useMemo, useState, useRef, useEffect, Suspense } from 'react';
 import Link from 'next/link';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import {
   Eye,
   Copy,
@@ -18,9 +18,10 @@ import {
   Shield,
   WrapText,
   RefreshCw,
+  Trash
 } from 'lucide-react';
 import Sidebar from '@/components/ui/sidebar';
-import { GetSnippet, UpdateSnippets } from '@/service/snippet/snippet.service';
+import { DeleteSnippet, GetSnippet, UpdateSnippets } from '@/service/snippet/snippet.service';
 import { GetCategory } from '@/service/category/category.service';
 import { SnippetForm, type SnippetFormData } from '@/app/dashboard/snippets/new/page';
 import type { SnippetDetail, SnippetType } from '@/types/snippet';
@@ -116,6 +117,7 @@ function SnippetDetailSkeleton() {
 
 function SnippetDetailContent() {
   const { id } = useParams<{ id: string }>();
+  const router = useRouter();
 
   const [snippet, setSnippet] = useState<SnippetDetail | null>(null);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -127,6 +129,8 @@ function SnippetDetailContent() {
   const [copied, setCopied] = useState(false);
   const [linkCopied, setLinkCopied] = useState(false);
   const [downloadFormat, setDownloadFormat] = useState<string>('auto');
+  const [deleting, setDeleting] = useState(false);
+  const [deleteError, setDeleteError] = useState('');
 
   /* ---------- fetch ---------- */
 
@@ -232,6 +236,22 @@ function SnippetDetailContent() {
     });
     await fetchSnippet();
     setEditing(false);
+  };
+
+  const handleDelete = async () => {
+    if (!window.confirm(`Hapus snippet "${snippet?.title}"? Tindakan ini tidak bisa dibatalkan.`)) {
+      return;
+    }
+
+    setDeleting(true);
+    setDeleteError('');
+    try {
+      await DeleteSnippet(id);
+      router.replace('/dashboard/snippets');
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : 'Gagal menghapus snippet.');
+      setDeleting(false);
+    }
   };
 
   /* ---------- loading / error ---------- */
@@ -518,14 +538,7 @@ function SnippetDetailContent() {
               <CodeViewer content={snippet.content} wrap={wrap} />
 
               {/* ============ FOOTER INFO ============ */}
-              <div className="mt-6 flex flex-col gap-4">
-                {/* Syntax info */}
-                <div className="flex items-center gap-2">
-                  <span className="size-2 bg-green-800 rounded-full" />
-                  <span className="text-zinc-500 text-xs font-mono">
-                    SYNTAX OK · SYSTEM PROMPT STANDARDS (V2)
-                  </span>
-                </div>
+              <div className="mt-6 flex justify-between gap-4">
 
                 {/* Download + actions */}
                 <div className="flex flex-wrap items-center gap-2">
@@ -572,6 +585,24 @@ function SnippetDetailContent() {
                   >
                     <FileText className="w-3 h-3" />
                     .txt
+                  </button>
+                </div>
+
+                <div className="flex items-center gap-2">
+                  {deleteError && (
+                    <span role="alert" className="max-w-64 text-xs text-red-600">
+                      {deleteError}
+                    </span>
+                  )}
+                  <button
+                    type="button"
+                    onClick={handleDelete}
+                    disabled={deleting}
+                    aria-label="Hapus snippet"
+                    title={deleting ? 'Menghapus...' : 'Hapus snippet'}
+                    className="bg-red-50 px-2 py-2 rounded hover:bg-red-100 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    <Trash size={20} className="text-red-500" />
                   </button>
                 </div>
               </div>

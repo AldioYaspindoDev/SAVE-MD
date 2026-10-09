@@ -20,7 +20,7 @@ export default function TaksonomiSection() {
             categoryNumber: "KATEGORI 01",
             title: "Prompt Coding & Agen",
             description:
-                "Instruksi terstruktur untuk codegen bebas halusinasi dengan format output deterministik.",
+                "Instruksi terstruktur untuk kebutuhan coding sehari-hari.",
             gradientClass: "from-amber-600 to-amber-700",
             dotColorClass: "bg-amber-600",
             presets: [
@@ -39,7 +39,7 @@ export default function TaksonomiSection() {
             categoryNumber: "KATEGORI 02",
             title: "Snippet UI & Komponen",
             description:
-                "Komponen frontend modular bersih tanpa bloated dependency siap tempel ke workspace.",
+                "Komponen frontend modular yang siap tempel ke workspace.",
             gradientClass: "from-indigo-600 to-blue-800",
             dotColorClass: "bg-blue-600",
             presets: [
@@ -80,8 +80,9 @@ export default function TaksonomiSection() {
                 <header className="flex items-center justify-between px-6 py-4 bg-neutral-100 border-b border-zinc-200 font-mono text-xs font-medium tracking-wide">
                     <div className="flex items-center gap-2 text-neutral-900">
                         <span className="w-2 h-2 bg-neutral-900 rounded-xs" />
-                        <span className="uppercase">TAKSONOMI ARSIP RESMI</span>
+                        <span className="uppercase">TAKSONOMI ARSIP</span>
                     </div>
+                    <div className="ms-3"></div>
                     <div className="text-zinc-400 uppercase">KLASIFIKASI 3-PILAR</div>
                 </header>
 
@@ -111,7 +112,7 @@ export default function TaksonomiSection() {
                                     {/* Presets List */}
                                     <div className="flex flex-col gap-2.5">
                                         <span className="font-mono text-xs font-medium text-zinc-400 uppercase tracking-wide">
-                                            PRESET REKOMENDASI
+                                            CONTOH ISI
                                         </span>
                                         <ul className="flex flex-col gap-2">
                                             {item.presets.map((preset, index) => (
@@ -138,16 +139,6 @@ export default function TaksonomiSection() {
                                         </p>
                                     </div>
                                 </div>
-                            </div>
-
-                            {/* Bottom Button Action */}
-                            <div className="px-6 pb-6 pt-2">
-                                <button
-                                    type="button"
-                                    className="w-full h-9 px-4 bg-white hover:bg-neutral-100 active:bg-neutral-200 rounded-xs border border-zinc-300 text-center font-mono text-xs font-medium text-neutral-900 transition-colors tracking-wide cursor-pointer"
-                                >
-                                    LIHAT ARSIP {item.archiveLabel} ({item.archiveCount}) &rarr;
-                                </button>
                             </div>
                         </div>
                     ))}

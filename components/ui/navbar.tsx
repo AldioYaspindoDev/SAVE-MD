@@ -33,8 +33,7 @@ export default function Navbar({ isLoggedIn = false }: NavbarProps) {
 
         {/* Navigation Links */}
         <div className="hidden md:flex items-center gap-6">
-          <a href="#" className="text-neutral-900 text-sm font-medium hover:text-indigo-600 transition-colors">Platform</a>
-          <a href="#" className="text-zinc-500 text-sm font-medium hover:text-indigo-600 transition-colors">Dokumentasi</a>
+          <a href="/" className="text-neutral-900 text-sm font-medium hover:text-indigo-600 transition-colors">Home</a>
         </div>
 
         {/* Actions */}

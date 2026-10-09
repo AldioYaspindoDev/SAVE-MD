@@ -93,14 +93,14 @@ export default function WorkspaceLogin() {
               </div>
 
               {/* Opsi Masuk Cepat */}
-              <div className="space-y-2">
+              {/* <div className="space-y-2">
                 <button
                   type="button"
                   className="w-full h-9 px-4 bg-white hover:bg-slate-50 border border-slate-300 rounded-xs flex items-center justify-between text-xs font-medium text-slate-800 transition-colors cursor-pointer"
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2"> */}
                     {/* <Github className="w-4 h-4 text-slate-900" /> */}
-                    <span>Masuk dengan GitHub</span>
+                    {/* <span>Masuk dengan GitHub</span>
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                 </button>
@@ -120,15 +120,15 @@ export default function WorkspaceLogin() {
                   </div>
                   <ArrowRight className="w-3.5 h-3.5 text-slate-400" />
                 </button>
-              </div>
+              </div> */}
 
               {/* Pembatas */}
-              <div className="relative flex items-center justify-center my-2">
+              {/* <div className="relative flex items-center justify-center my-2">
                 <div className="w-full border-t border-slate-200" />
                 <span className="absolute px-3 bg-white text-[10px] font-mono text-slate-400 uppercase">
                   Atau Masuk Email
                 </span>
-              </div>
+              </div> */}
 
               {/* Form Input */}
               <form onSubmit={handleSubmit} className="space-y-3">

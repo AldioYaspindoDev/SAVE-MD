@@ -96,14 +96,14 @@ export default function CreateCategoryForm() {
   }
 
   return (
-    <div className="flex h-screen w-full bg-zinc-50 overflow-hidden font-sans max-w-8xl bg-white">
+    <div className="flex h-screen w-full bg-zinc-50 overflow-hidden font-sans">
       {/* Sidebar Navigation */}
       <Sidebar />
-      <div className="">
-        <form onSubmit={handleSubmit} className="flex flex-col">
+      <div className="flex-1 h-full flex flex-col overflow-hidden">
+        <form onSubmit={handleSubmit} className="flex flex-col flex-1 min-h-0">
 
           {/* Form Container */}
-          <div className="p-8 md:p-10 flex flex-col gap-8">
+          <div className="p-8 md:p-10 flex flex-col gap-8 flex-1 overflow-y-auto min-h-0">
 
             {/* Header Section */}
             <div className="pb-6 border-b border-zinc-200 flex flex-col gap-3">
@@ -298,17 +298,12 @@ export default function CreateCategoryForm() {
           </div>
 
           {/* Footer / Actions Bar */}
-          <div className="px-8 py-4 bg-zinc-50 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 font-mono text-xs">
+          <div className="px-8 py-4 bg-zinc-50 border-t border-zinc-200 flex flex-wrap items-center justify-between gap-4 font-mono text-xs shrink-0">
             <div className="flex items-center gap-3 text-zinc-500">
               {error ? (
                 <span className="text-red-600 font-medium">{error}</span>
               ) : (
                 <>
-                  <div className="flex items-center gap-1.5">
-                    <span className="size-2 bg-emerald-600 rounded-full animate-pulse" />
-                    <span className="font-medium">AUTO-VALIDATED VIA ZOD/PRISMA</span>
-                  </div>
-                  <span className="text-zinc-300">|</span>
                   <span className="px-1.5 py-0.5 bg-zinc-200 text-neutral-800 rounded text-[11px]">
                     ESC = Batal
                   </span>
@@ -327,7 +322,7 @@ export default function CreateCategoryForm() {
               <button
                 type="submit"
                 disabled={loading}
-                className="px-4 py-2 bg-neutral-900 text-white rounded hover:bg-neutral-800 text-xs font-medium flex items-center gap-2 shadow-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-neutral-800 text-xs font-medium flex items-center gap-2 shadow-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 <span>{loading ? 'Menyimpan...' : 'Simpan Kategori'}</span>
                 <span className="px-1 py-0.5 bg-white/20 rounded text-[10px] font-mono">⌘S</span>

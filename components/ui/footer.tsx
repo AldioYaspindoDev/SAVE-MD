@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-
+import Image from "next/image";
 export interface FooterLink {
   label: string;
   href: string;
@@ -23,35 +23,35 @@ export interface FooterProps {
 
 const DEFAULT_COLUMNS: FooterColumn[] = [
   {
-    title: "PLATFORM",
+    title: "PRODUK",
     links: [
-      { label: "Mesin Model", href: "/platform/model-engine" },
-      { label: "Penyimpanan", href: "/platform/storage" },
-      { label: "Pipeline", href: "/platform/pipeline" },
+      { label: "Fitur", href: "/fitur" },
+      { label: "Cara Pakai", href: "/cara-pakai" },
+      { label: "Changelog", href: "/changelog" },
     ],
   },
   {
     title: "SUMBER DAYA",
     links: [
-      { label: "Dokumen", href: "/docs" },
-      { label: "Spesifikasi API", href: "/api-spec" },
-      { label: "Registry", href: "/registry" },
+      { label: "Dokumentasi", href: "/docs" },
+      { label: "Panduan", href: "/panduan" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
-    title: "KEAMANAN",
+    title: "DATA",
     links: [
-      { label: "Enkripsi", href: "/security/encryption" },
-      { label: "Audit SOC2", href: "/security/soc2" },
-      { label: "Kepatuhan", href: "/security/compliance" },
+      { label: "Penyimpanan Lokal", href: "/data/lokal" },
+      { label: "Ekspor", href: "/data/ekspor" },
+      { label: "Backup", href: "/data/backup" },
     ],
   },
   {
-    title: "LEGALITAS",
+    title: "LAINNYA",
     links: [
-      { label: "Lisensi", href: "/legal/license" },
-      { label: "Privasi", href: "/legal/privacy" },
-      { label: "Ketentuan", href: "/legal/terms" },
+      { label: "Lisensi", href: "/lisensi" },
+      { label: "Privasi", href: "/privasi" },
+      { label: "Kontak", href: "/kontak" },
     ],
   },
 ];
@@ -61,11 +61,11 @@ const DEFAULT_COLUMNS: FooterColumn[] = [
  */
 export default function Footer({
   brandName = "VAULT",
-  brandDescription = "Arsitektur aset AI & ruang kerja teknis modular terverifikasi.",
-  operationalStatus = "OPERASIONAL 100%",
-  copyrightText = "© 2026 VAULT SYSTEMS INC. SELURUH HAK CIPTA DILINDUNGI.",
+  brandDescription = "Tempat penyimpanan pribadi untuk kode, prompt, dan catatan.",
+  operationalStatus = "TERSEDIA",
+  copyrightText = "© 2026 VAULT.",
   statusText = "STATUS: NORMAL",
-  systemId = "ID: 409-TX-GLOBAL",
+  systemId = "VERSI 0.1",
   columns = DEFAULT_COLUMNS,
 }: FooterProps) {
   return (
@@ -77,7 +77,14 @@ export default function Footer({
           <div className="p-4 sm:p-6 lg:col-span-1 flex flex-col justify-between gap-6">
             <div className="flex flex-col gap-2">
               <div className="flex items-center gap-2">
-                <span className="w-4 h-4 bg-neutral-900 rounded-xs shrink-0" />
+                <Image
+                  src="/Images/VaultsLogo.jpeg"
+                  alt={brandName}
+                  height={30}
+                  width={30}
+                />
+
+                
                 <span className="text-base font-medium text-neutral-900 tracking-tight">
                   {brandName}
                 </span>

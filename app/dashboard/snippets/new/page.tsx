@@ -8,7 +8,7 @@ import {
   Suspense,
 } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { FileText, Terminal, Star, Pin, X, Save, Loader2 } from 'lucide-react';
+import { FileText, Terminal, Star, Pin, X, Save, Loader2, } from 'lucide-react';
 import Sidebar from '@/components/ui/sidebar';
 import { GetCategory } from '@/service/category/category.service';
 import { CreateSnippets } from '@/service/snippet/snippet.service';
